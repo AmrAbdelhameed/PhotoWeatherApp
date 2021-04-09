@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_photos">
+    <fragment
+        android:id="@+id/fragment_photos"
+        android:name="com.amrabdelhameed.photoweatherapp.presentation.photos.PhotosFragment"
+        android:label="fragment_photos"
+        tools:layout="@layout/fragment_photos">
+        <action
+            android:id="@+id/to_fragment_add_photo"
+            app:destination="@id/fragment_add_photo" />
+        <action
+            android:id="@+id/to_fragment_photo_details"
+            app:destination="@id/fragment_photo_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_add_photo"
+        android:name="com.amrabdelhameed.photoweatherapp.presentation.add_photo.AddPhotoFragment"
+        android:label="fragment_add_photo"
+        tools:layout="@layout/fragment_add_photo">
+        <argument
+            android:name="bitmap"
+            app:argType="android.graphics.Bitmap" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_photo_details"
+        android:name="com.amrabdelhameed.photoweatherapp.presentation.photo_details.PhotoDetailsFragment"
+        android:label="fragment_photo_details"
+        tools:layout="@layout/fragment_photo_details">
+        <argument
+            android:name="photoDataItem"
+            app:argType="com.amrabdelhameed.photoweatherapp.presentation.photo_details.PhotoDataItem" />
+    </fragment>
+</navigation>
